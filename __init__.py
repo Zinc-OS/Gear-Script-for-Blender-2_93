@@ -10,7 +10,18 @@ def float2str(float,precision=2):
     if precision==0:
         return str(round(float))
     return str(round(float*10**precision)/10**precision)
-
+bl_info = {
+    "name": "Gear Script",
+    "description": "Script that makes gears and aoutomatically assigns drivers based on gear radius and number of teeth. Right click on a gear to add a driven gear. Include helical gears.",
+    "author": "Louis Sarwal",
+    "version": (1, 0),
+    "blender": (2, 93, 0),
+    "location": "View3D > Add > Mesh",
+    "warning": "Still in development", # used for warning icon and text in addons panel
+    "tracker_url": "https://developer.blender.org/maniphest/task/edit/form/2/",
+    "support": "COMMUNITY",
+    "category": "Add Mesh",
+}
     
 def add_gear(radius,
             teeth,
