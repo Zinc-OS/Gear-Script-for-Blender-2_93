@@ -680,7 +680,7 @@ class AddGear(bpy.types.Operator, AddObjectHelper):
             #var.targets[0].transform_space='TRANSFORM_SPACE'
             var.targets[0].id=s_obj
             
-            driver.driver.expression='-('+str(s_obj.data['teeth'])+'/'+str(o.data['teeth'])+')*var+'+str(2*pi/o.data['teeth']+(o.data['teeth']%2+1)*pi/o.data['teeth']+r)+"+"+str(r)+'*('+str(s_obj.data['teeth'])+'/'+str(o.data['teeth'])+')'
+            driver.driver.expression='(-('+str(s_obj.data['teeth']/o.data['teeth'])+')*var+'+str(2*pi/o.data['teeth']+(o.data['teeth']%2+1)*pi/o.data['teeth']+r+r*(s_obj.data['teeth']/o.data['teeth']))+')%(2*pi)'
             
             #driver=o.driver_add("location",0)
             #if len(driver.driver.variables)>0:
